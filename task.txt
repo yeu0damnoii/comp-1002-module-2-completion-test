@@ -1,0 +1,20 @@
+Student Test Scores
+A file called scores.txt contains student test scores. Each non-empty line contains a student name followed by one or more integer test scores, separated by a delimiter.
+
+Example format (your actual file may differ):
+
+Alice,65,70,68
+Bob,55,60,58
+Cara,82,85,90
+  
+Tasks
+Read the file scores.txt line by line.
+Extract the student name and their scores.
+Write a function calculate_average(scores) that takes a list of scores and returns the average score.
+Store all averages in a list called averages.
+Write the list of averages to averages.txt, one per line, formatted to 1 decimal place (for example: 72.3).
+Important
+Ignore blank lines.
+Scores are integers.
+Implement a function process_scores(in_filename="scores.txt", out_filename="averages.txt") that performs the full task and returns the list of averages.
+You'll find some helpful functions listed at the bottom of the page.
