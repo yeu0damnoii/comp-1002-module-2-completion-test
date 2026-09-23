@@ -1,0 +1,26 @@
+Student Test Scores
+A file called scores.txt contains student test scores. Each non-empty line contains a student name followed by one or more integer test scores, separated by a delimiter.
+
+Example format (your actual file may differ):
+
+Alice,65,70,68
+Bob,55,60,58
+Cara,82,85,90
+  
+Tasks
+Read the file scores.txt line by line.
+Extract the student name and their scores.
+Write a function count_passes(scores) that returns how many scores are greater than or equal to 50.
+Store the list: name, count in a list called passes.
+Write the list values from passes to passes.txt, one per line, (for example: Alice,3).
+Important
+Ignore blank lines.
+Scores are integers.
+Implement a function process_scores(in_filename="scores.txt", out_filename="passes.txt") that performs the full task and returns the list passes.
+You'll find some helpful functions listed at the bottom of the page.
+
+Edit user_code.py below to define the following functions:
+
+Name	Type	Description
+count_passes	function	function to count passing scores
+process_scores	function	function to perform all tasks. calls count_passes.
