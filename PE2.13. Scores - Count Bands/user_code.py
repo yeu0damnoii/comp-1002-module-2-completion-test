@@ -15,7 +15,7 @@ def count_bands(scores):
             count50_64+=1
         elif 65<=score<=74:
             count65_74+=1
-        elif 75<=score<84:
+        elif 75<=score<=84:
             count75_84+=1
         else:
             count85_100+=1
@@ -31,11 +31,14 @@ def process_scores(in_filename="scores.txt", out_filename="distributions.txt"):
         if line:
             student_score = line.split(',')
             distri=count_bands(student_score[1:])
-            
             distribution.append(distri)
-    for item in distribution:        
-        outfile.write(f'{item}\n')
+    for items in distribution:    
+          
+        for item in items[:-1]:           
+            outfile.write(f'{item},')
+        outfile.write(f'{items[-1]}') 
+        outfile.write(f'\n')
     return distribution 
 
 
-        
+process_scores()      
