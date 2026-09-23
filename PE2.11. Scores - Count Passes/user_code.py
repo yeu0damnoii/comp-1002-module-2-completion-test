@@ -8,12 +8,24 @@ def count_passes(scores):
 def process_scores(in_filename="scores.txt", out_filename="passes.txt"):
     outfile = open("passes.txt", "w")
     infile = open("scores.txt", "r")
+    """
+    passess = []
+    """
     for line in infile:
         line=line.strip()
         if line:
             student_score = line.split(',')
             pass_score=count_passes(student_score[1:])
             outfile.write(f"{student_score[0]},{pass_score}\n")
+            """
+            passes.append([student_score[0], pass_score])
+        for item in passes:
+            line = item[0] + ',' + str(item[1]) + '\n'
+            outfile.write(line)
+
+        return passes
+            """
+
 
     outfile.close()
     infile.close()
