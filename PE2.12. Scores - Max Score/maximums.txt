@@ -1,0 +1,6 @@
+100
+Ivan,99
+Alice,99
+Hana,83
+Elijah,100
+Bob,83
