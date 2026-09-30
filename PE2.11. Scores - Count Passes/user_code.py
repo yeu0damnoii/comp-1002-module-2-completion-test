@@ -22,6 +22,7 @@ def process_scores(in_filename="scores.txt", out_filename="passes.txt"):
         for item in passes:
             line = item[0] + ',' + str(item[1]) + '\n'
             outfile.write(line)
+            
 
         return passes
             """

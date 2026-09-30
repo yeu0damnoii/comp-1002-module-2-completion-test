@@ -1,31 +1,25 @@
-
-
-def calculate_average(scores:list):
-    total = 0
-    count = 0
-    for i in scores:
-        i=int(i)
-        count +=1
-        total+=i
-    if total > 0:
-        return (round(total/count,1))
-    
+def calculate_average(scores):
+    if not scores:
+        return 0.0
+    total = sum(int(s) for s in scores)
+    return total / len(scores)
 
 def process_scores(in_filename="scores.txt", out_filename="averages.txt"):
-    outfile = open("averages.txt", "w")
-    infile = open("scores.txt", "r")
-    #lis= infile.readlines()
     averages = []
-    for line in infile:
-        line=line.strip()
-        if not line:
-            continue
-        scores = line.split(",")
-        avg = calculate_average(scores[1:])
-        outfile.write(f"{avg}\n")
-        averages.append(avg)
-    outfile.close()
-    infile.close()
+    with open(in_filename, "r") as infile:
+        for line in infile:
+            line = line.strip()
+            if not line:
+                continue
+            parts = line.split(",")
+            scores = parts[1:]
+            avg = calculate_average(scores)
+            averages.append(round(avg, 1))
+            
+    with open(out_filename, "w") as outfile:
+        for avg in averages:
+            outfile.write(f"{avg:.1f}\n")
+            
     return averages
 
 
